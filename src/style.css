@@ -27,3 +27,10 @@ body{
 .postrating:not(:last-child){
 margin-right: 10px;
 }
+.pr_select > .pr_btn,
+.pr_select > .pr_count{
+    color: #009578;
+}
+.postrating:not(.pr_select) > .pr_btn:hover {
+    color: #000000;
+}

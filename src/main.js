@@ -12,6 +12,23 @@ document.querySelectorAll(".cardpost").forEach(cardpost => {
         console.log(count);
 
         button.addEventListener("click", async () => {
+            /* prevent double clicking */
+            if (rating.classList.contains("pr_select")){
+                return;
+            }
+            count.textContent = Number(count.textContent) + 1;
+
+            ratings.forEach(rating => {
+                if(rating.classList.contains("pr_select")) {
+                    const count = rating.querySelector(".pr_count");
+                    
+                    count.textContent = Math.max(0, Number(count.textContent) - 1);
+                    rating.classList.remove("pr_select");
+                }
+            })
+            rating.classList.add("pr_select");
+
+        /*1 */
           const likeorDislike = likerating === rating ? "like" : "dislike";
           const response = await fetch(`/posts/${postId}/${likeorDislike}`)
           const body = await response.json()

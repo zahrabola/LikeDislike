@@ -1,0 +1,29 @@
+body{
+    max-width: 500px;
+    margin: auto;
+}
+.post_img{
+    display:block;
+    width: 100%;
+}
+.ratingcontainer{
+    display: flex;
+    justify-content: end;
+    padding: 15px 0;
+}
+.postrating{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 10px;
+}
+.pr_count{
+   padding-left: 5px;
+}
+.pr_btn{
+    margin-right: 5px;
+    color: #555555;
+}
+.postrating:not(:last-child){
+margin-right: 10px;
+}
